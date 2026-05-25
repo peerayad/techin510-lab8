@@ -33,7 +33,7 @@ import pandas as pd
 import plotly.express as px
 from dotenv import load_dotenv
 
-from agent import get_agent_response
+from agent import get_groq_key, get_agent_response
 from database import (
     AREA_OPTIONS,
     INSERT_COLUMNS,
@@ -65,25 +65,6 @@ def refresh_data() -> pd.DataFrame:
     """Clear cached purchases and reload from the database."""
     load_purchases.clear()
     return load_purchases()
-
-
-def get_groq_api_key() -> str:
-    """Load Groq API key from .env (local) or st.secrets (Streamlit Cloud)."""
-    if ENV_PATH.exists():
-        load_dotenv(ENV_PATH, override=True)
-        key = os.getenv("GROQ_API_KEY", "").strip()
-        if key and key != "your-api-key-here":
-            return key
-        return ""
-
-    try:
-        key = st.secrets["GROQ_API_KEY"].strip()
-        if key and key != "your-api-key-here":
-            return key
-    except (FileNotFoundError, KeyError):
-        pass
-
-    return ""
 
 
 def format_currency(value: float) -> str:
@@ -430,13 +411,11 @@ def render_agent(df: pd.DataFrame) -> None:
     purchase_count = len(purchases_df)
     st.caption(f"Kevin's data: {purchase_count} purchases loaded")
 
-    api_key = get_groq_api_key()
-    if not api_key:
+    groq_key = get_groq_key()
+    if not groq_key or groq_key == "your-api-key-here":
         st.error(
-            "GROQ_API_KEY is missing or still set to the placeholder. "
-            "Open `.env`, set `GROQ_API_KEY=gsk_...` with your key from "
-            "[console.groq.com](https://console.groq.com), **save the file**, "
-            "then refresh this page."
+            "GROQ_API_KEY is missing. Add it to Streamlit secrets (Cloud) or "
+            "`.env` (local) with your key from [console.groq.com](https://console.groq.com)."
         )
         return
 
