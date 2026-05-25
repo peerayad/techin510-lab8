@@ -48,8 +48,20 @@ lab-8-peerayad/
 ├── requirements.txt
 ├── .env.example              # Credentials template
 ├── user_flow_diagram.svg     # User flow with risk labels
+├── Lab8_report_VF.pdf        # Full lab report (Components A–D + Reflection)
 └── README.md
 ```
+
+---
+
+## Lab Report
+
+The full lab report is available at [`Lab8_report_VF.pdf`](Lab8_report_VF.pdf) and covers:
+
+- **Component A:** Staff interview synthesis and JTBD statement
+- **Component C:** System architecture, user flow diagram with risk labels, and design decision log
+- **Component D:** Evaluation design, golden test set (15 cases), results, and report
+- **Reflection**
 
 ---
 
