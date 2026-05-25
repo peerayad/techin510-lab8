@@ -5,8 +5,9 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
 import pandas as pd
-from dotenv import load_dotenv
 from supabase import Client, create_client
+
+from config import get_config_value
 
 PROJECT_DIR = Path(__file__).parent
 ENV_PATH = PROJECT_DIR / ".env"
@@ -52,56 +53,15 @@ INSERT_COLUMNS = PURCHASE_COLUMNS + EXTRA_COLUMNS
 _client: Optional[Client] = None
 
 
-def _load_env() -> None:
-    """Load environment variables from .env only (.env.example is never read)."""
-    if not ENV_PATH.exists():
-        raise FileNotFoundError(
-            f"{ENV_PATH.name} not found. Create it from .env.example and add your "
-            "SUPABASE_URL and SUPABASE_KEY (only .env is used at runtime)."
-        )
-    load_dotenv(ENV_PATH, override=True)
-
-
 def _get_supabase_credentials() -> Tuple[str, str]:
-    """
-    Load Supabase credentials from .env (local) or st.secrets (Streamlit Cloud).
-
-    Local runs always read .env — never .env.example.
-    """
-    url: Optional[str] = None
-    key: Optional[str] = None
-
-    if ENV_PATH.exists():
-        _load_env()
-        url = os.getenv("SUPABASE_URL")
-        key = os.getenv("SUPABASE_KEY")
-    else:
-        try:
-            from streamlit.runtime.scriptrunner import get_script_run_ctx
-
-            if get_script_run_ctx() is not None:
-                import streamlit as st
-
-                if "SUPABASE_URL" in st.secrets:
-                    url = st.secrets["SUPABASE_URL"]
-                if "SUPABASE_KEY" in st.secrets:
-                    key = st.secrets["SUPABASE_KEY"]
-        except Exception:
-            pass
-
-        if not url or not key:
-            raise FileNotFoundError(
-                f"{ENV_PATH.name} not found. Create it from .env.example and add "
-                "your credentials (.env.example is never loaded). On Streamlit "
-                "Cloud, use App secrets instead."
-            )
-
+    """Load Supabase credentials from .env or Streamlit secrets."""
+    url = get_config_value("SUPABASE_URL")
+    key = get_config_value("SUPABASE_KEY")
     if not url or not key:
         raise ValueError(
-            f"SUPABASE_URL and SUPABASE_KEY must be set in {ENV_PATH.name}. "
-            ".env.example is a template only and is never read."
+            f"SUPABASE_URL and SUPABASE_KEY must be set in {ENV_PATH.name} "
+            "or Streamlit secrets (.env.example is never read)."
         )
-
     return url, key
 
 

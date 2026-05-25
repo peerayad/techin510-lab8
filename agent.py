@@ -1,27 +1,15 @@
 """Groq agent for purchasing insights and recommendations."""
 
-import os
-
 import pandas as pd
-from dotenv import load_dotenv
 from groq import Groq
 
 GROQ_MODEL = "llama-3.1-8b-instant"
 
 
 def get_groq_key():
-    # Try st.secrets first (Streamlit Cloud)
-    try:
-        import streamlit as st
+    from config import get_config_value
 
-        key = st.secrets.get("GROQ_API_KEY")
-        if key:
-            return key
-    except Exception:
-        pass
-    # Fall back to .env (local)
-    load_dotenv()
-    return os.getenv("GROQ_API_KEY")
+    return get_config_value("GROQ_API_KEY")
 
 
 GROQ_API_KEY = get_groq_key()
@@ -81,7 +69,7 @@ def _dataframe_to_markdown(df: pd.DataFrame) -> str:
         "| " + " | ".join(str(v) for v in row) + " |"
         for row in display.astype(str).values
     ]
-    return "\n".join([header, separator] + rows]
+    return "\n".join([header, separator] + rows)
 
 
 def get_agent_response(user_question: str, purchases_df: pd.DataFrame) -> str:
