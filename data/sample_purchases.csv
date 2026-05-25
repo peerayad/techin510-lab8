@@ -1,0 +1,26 @@
+date,vendor,description,amount,area,type,workday_category,pca_code,invoice_number,po_number,notes
+2022-01-14,Amazon,PLA filament 1kg spool white,24.99,3D Printers,Materials,3D Printing Supplies,100 · MKR · SUPPLY,50951200,0122KARNE,Restock for intro workshop
+2022-03-08,DigiKey,Assorted resistors kit 1/4W,18.50,Electronics,Materials,Other Supplies,100 · MKR · SUPPLY,50951201,0322KARNE,For EE101 lab kits
+2022-04-22,McMaster-Carr,M6 socket head cap screws 50-pack,32.75,General,Materials,Other Supplies,100 · MKR · SUPPLY,50951202,0422KARNE,Machine shop fixture rebuild
+2022-06-15,Prusa,Nozzle set 0.4mm brass 5-pack,45.00,3D Printers,Tool Repair Supplies,3D Printing Supplies,100 · MKR · SUPPLY,50951203,0622KARNE,Backup nozzles for MK3 fleet
+2022-08-03,Grainger,Safety glasses ANSI Z87.1 12-pack,89.40,General,Organization/Security,Other Supplies,100 · MKR · SUPPLY,50951204,0822KARNE,Orientation week PPE
+2022-09-19,Amazon,Solder wire 63/37 0.031in 1lb,28.75,Electronics,Consumable/Losable Tools,Other Supplies,100 · MKR · SUPPLY,50951205,0922KARNE,Shared soldering stations
+2022-11-02,McMaster-Carr,Aluminum bar stock 6061 1x1x12in,67.20,Woodshop,Materials,Other Supplies,100 · MKR · SUPPLY,50951206,1122KARNE,CNC practice stock
+2023-01-27,DigiKey,Arduino Uno R3 boards qty 10,189.90,Electronics,New Tools,Equipment,100 · MKR · SUPPLY,50951207,0123KARNE,Microcontroller intro course
+2023-02-14,Amazon,Heat-shrink tubing assortment,15.99,Electronics,Consumable/Losable Tools,Other Supplies,100 · MKR · SUPPLY,50951208,0223KARNE,
+2023-03-30,Prusa,PEI spring steel sheet MK3,54.00,3D Printers,Tool Repair Supplies,3D Printing Supplies,100 · MKR · SUPPLY,50951209,0323KARNE,Replace warped bed on printer 2
+2023-04-18,Epilog,Laser tube replacement kit 40W,412.00,Lasers,Tool Repair Supplies,Equipment,100 · MKR · SUPPLY,50951210,0423KARNE,Main laser annual maintenance
+2023-05-11,Grainger,Shop vacuum HEPA filter bags 5-pack,42.30,General,Consumable/Losable Tools,Other Supplies,100 · MKR · SUPPLY,50951211,0523KARNE,Dust collection maintenance
+2023-06-22,Amazon,Wood glue Titebond III 32oz,19.48,Woodshop,Materials,Other Supplies,100 · MKR · SUPPLY,50951212,0623KARNE,Joinery station restock
+2023-07-18,McMaster-Carr,Delrin rod 1in diameter 12in length,78.55,Robotics,Materials,Other Supplies,100 · MKR · SUPPLY,50951213,0723KARNE,Jig and fixture material
+2023-08-09,DigiKey,Stepper motor NEMA 17 12V,34.25,Robotics,Sensors,Other Supplies,100 · MKR · SUPPLY,50951214,0823KARNE,CNC retrofit spare
+2023-09-05,Amazon,Sandpaper assortment 120-400 grit,22.60,Woodshop,Consumable/Losable Tools,Other Supplies,100 · MKR · SUPPLY,50951215,0923KARNE,
+2023-10-17,Grainger,First aid kit refill supplies,56.80,General,Organization/Security,Other Supplies,100 · MKR · SUPPLY,50951216,1023KARNE,Annual safety compliance
+2023-11-28,Prusa,ASA filament 1.75mm 1kg black,52.90,3D Printers,Materials,3D Printing Supplies,100 · MKR · SUPPLY,50951217,1123KARNE,Outdoor signage prototypes
+2024-01-10,Amazon,USB-C cables 6ft 10-pack,38.99,Electronics,Consumable/Losable Tools,Other Supplies,100 · MKR · SUPPLY,50951218,0124KARNE,Student loaner cable pool
+2024-02-22,DigiKey,Capacitor kit electrolytic and ceramic,41.00,Electronics,Materials,Other Supplies,100 · MKR · SUPPLY,50951219,0224KARNE,Capstone inventory
+2024-03-15,Spectrum Glaze,Ceramic glaze set classroom pack,86.30,Casting/Ceramics,Materials,Other Supplies,100 · MKR · SUPPLY,50951220,0324KARNE,Wheel throwing class
+2024-04-08,Grainger,Belt sander replacement belts 4x36,47.65,Woodshop,Tool Repair Supplies,Equipment,100 · MKR · SUPPLY,50951221,0424KARNE,Main belt sander worn out
+2024-05-20,Amazon,Blue painter's tape 2in 6-roll,14.25,3D Printers,Consumable/Losable Tools,3D Printing Supplies,100 · MKR · SUPPLY,50951222,0524KARNE,Build plate adhesion
+2024-06-03,Prusa,i3 MK4 assembled printer,799.00,3D Printers,New Tools,Equipment,100 · MKR · SUPPLY,50951223,0624KARNE,Replace end-of-life MK2 in bay 4
+2024-07-12,DigiKey,Logic analyzer Saleae compatible clone,89.99,Electronics,New Tools,Equipment,100 · MKR · SUPPLY,50951224,0724KARNE,Debug station upgrade
